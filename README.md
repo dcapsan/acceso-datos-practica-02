@@ -13,8 +13,8 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 - [x] Bloque 3: lectura de `datos-bib.dat`
 - [x] Bloque 4: separar libros por género
 - [x] Bloque 5: generar `biblioteca-juvenil.xml`
-- [ ] Bloque 6: generar `biblioteca.json`
-- [ ] Bloque 7: validar el XML con el XSD
+- [x] Bloque 6: generar `biblioteca.json`
+- [x] Bloque 7: validar el XML con el XSD
 - [ ] Bloque 8: actualizar la sede en `datos-bib.dat`
 
 ## Bloque 1: lectura de campos.dat
@@ -47,6 +47,10 @@ Ejecutar: java -cp target\classes com.example.GeneradorXML
 ## Bloque 6: generar biblioteca.json
 Clase `GeneradorJSON`, con la librería Gson (dependencia en el pom.xml). Contiene los 17 libros que se quedan en la sede CENTRAL.
 Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.GeneradorJSON"
+
+## Bloque 7: validar el XML
+Clase `ValidadorXML`. Usa `SchemaFactory` y `Validator` de Java para comprobar `biblioteca-juvenil.xml` contra `biblioteca.xsd`.
+Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.ValidadorXML"
 
 ## Cómo compilar y ejecutar
 Se requiere JDK 17 o posterior.

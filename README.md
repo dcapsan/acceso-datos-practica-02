@@ -44,6 +44,10 @@ Clase `GeneradorXML`, con DOM (incluido en Java). Raíz `<biblioteca>` y un `<li
 Los libros juveniles se escriben con sede JUVENIL.
 Ejecutar: java -cp target\classes com.example.GeneradorXML
 
+## Bloque 6: generar biblioteca.json
+Clase `GeneradorJSON`, con la librería Gson (dependencia en el pom.xml). Contiene los 17 libros que se quedan en la sede CENTRAL.
+Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.GeneradorJSON"
+
 ## Cómo compilar y ejecutar
 Se requiere JDK 17 o posterior.
 

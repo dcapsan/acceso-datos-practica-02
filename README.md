@@ -52,7 +52,6 @@ Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.GeneradorJSON"
 Clase `ValidadorXML`. Usa `SchemaFactory` y `Validator` de Java para comprobar `biblioteca-juvenil.xml` contra `biblioteca.xsd`.
 Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.ValidadorXML"
 
-
 ## Bloque 8: actualizar la sede en datos-bib.dat
 Clase `ModificadorSede`. Con `RandomAccessFile` en modo "rw" se hace `seek` a la posición del campo sede de cada libro juvenil (registro * 106 + 96) y se escribe JUVENIL.
 Las posiciones se calculan a partir de `campos.dat`.
@@ -63,3 +62,6 @@ Se requiere JDK 17 o posterior.
 
 mvn compile
 java -cp target\classes com.example.LectorCampos
+
+## Nota sobre las tildes
+En la consola de Windows las tildes pueden verse mal al ejecutar con Maven. Es solo la visualización. Se soluciona con `chcp 65001` y `JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8`. Los ficheros XML y JSON se generan en UTF-8 correctamente.

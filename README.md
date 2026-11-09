@@ -12,7 +12,7 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 - [x] Bloque 2: clase `Libro`
 - [x] Bloque 3: lectura de `datos-bib.dat`
 - [x] Bloque 4: separar libros por género
-- [ ] Bloque 5: generar `biblioteca-juvenil.xml`
+- [x] Bloque 5: generar `biblioteca-juvenil.xml`
 - [ ] Bloque 6: generar `biblioteca.json`
 - [ ] Bloque 7: validar el XML con el XSD
 - [ ] Bloque 8: actualizar la sede en `datos-bib.dat`
@@ -38,6 +38,11 @@ Ejecutar: java -cp target\classes com.example.LectorBiblioteca
 Clase `SeparadorCatalogo`. Un libro es juvenil si alguno de sus dos géneros es Infantil o Juvenil.
 Se separa por género, no por la sede que traiga el fichero.
 Ejecutar: java -cp target\classes com.example.SeparadorCatalogo
+
+## Bloque 5: generar biblioteca-juvenil.xml
+Clase `GeneradorXML`, con DOM (incluido en Java). Raíz `<biblioteca>` y un `<libro isbn="...">` por libro, en el orden del XSD.
+Los libros juveniles se escriben con sede JUVENIL.
+Ejecutar: java -cp target\classes com.example.GeneradorXML
 
 ## Cómo compilar y ejecutar
 Se requiere JDK 17 o posterior.

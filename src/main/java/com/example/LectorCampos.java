@@ -1,4 +1,4 @@
-package es.dario;
+package com.example;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,8 +17,8 @@ public class LectorCampos {
     }
 
     public static void main(String[] args) throws Exception {
-        var campos = leerCampos("campos.dat");
-        for (var campo : campos) {
+        LinkedHashSet<AbstractMap.SimpleEntry<String, Integer>> campos = leerCampos("campos.dat");
+        for (AbstractMap.SimpleEntry<String, Integer> campo : campos) {
             System.out.println(campo.getKey() + " -> " + campo.getValue() + " bytes");
         }
     }

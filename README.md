@@ -9,7 +9,7 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 
 ## Progreso
 - [x] Bloque 1: lectura de `campos.dat` (`LectorCampos`)
-- [ ] Bloque 2: clase `Libro`
+- [x] Bloque 2: clase `Libro`
 - [ ] Bloque 3: lectura de `datos-bib.dat`
 - [ ] Bloque 4: separar libros por género
 - [ ] Bloque 5: generar `biblioteca-juvenil.xml`
@@ -21,3 +21,13 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 `campos.dat` contiene un `LinkedHashSet<AbstractMap.SimpleEntry<String,Integer>>`.
 Se lee con `ObjectInputStream`. El set mantiene el orden de los campos.
 El campo `genero` aparece una vez, pero se leerá dos veces en el fichero de acceso aleatorio.
+Campos y tamaños leídos de `campos.dat`:
+isbn (4), autor (20), titulo (30), genero (15, dos veces), precio (8), fechaPublicacion (4), sede (10).
+Tamaño de cada registro: 106 bytes.
+
+## Bloque 2: clase Libro
+Clase `Libro` con los 7 campos. `generos` es una lista de 2 elementos.
+
+## Cómo compilar y ejecutar
+mvn compile
+java -cp target\classes com.example.LectorCampos

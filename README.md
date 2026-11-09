@@ -15,7 +15,7 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 - [x] Bloque 5: generar `biblioteca-juvenil.xml`
 - [x] Bloque 6: generar `biblioteca.json`
 - [x] Bloque 7: validar el XML con el XSD
-- [ ] Bloque 8: actualizar la sede en `datos-bib.dat`
+- [x] Bloque 8: actualizar la sede en `datos-bib.dat`
 
 ## Bloque 1: lectura de campos.dat
 `campos.dat` contiene un `LinkedHashSet<AbstractMap.SimpleEntry<String,Integer>>`.
@@ -51,6 +51,12 @@ Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.GeneradorJSON"
 ## Bloque 7: validar el XML
 Clase `ValidadorXML`. Usa `SchemaFactory` y `Validator` de Java para comprobar `biblioteca-juvenil.xml` contra `biblioteca.xsd`.
 Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.ValidadorXML"
+
+
+## Bloque 8: actualizar la sede en datos-bib.dat
+Clase `ModificadorSede`. Con `RandomAccessFile` en modo "rw" se hace `seek` a la posición del campo sede de cada libro juvenil (registro * 106 + 96) y se escribe JUVENIL.
+Las posiciones se calculan a partir de `campos.dat`.
+Ejecutar: mvn compile exec:java "-Dexec.mainClass=com.example.ModificadorSede"
 
 ## Cómo compilar y ejecutar
 Se requiere JDK 17 o posterior.

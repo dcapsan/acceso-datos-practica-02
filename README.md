@@ -10,7 +10,7 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 ## Progreso
 - [x] Bloque 1: lectura de `campos.dat` (`LectorCampos`)
 - [x] Bloque 2: clase `Libro`
-- [ ] Bloque 3: lectura de `datos-bib.dat`
+- [x] Bloque 3: lectura de `datos-bib.dat`
 - [ ] Bloque 4: separar libros por género
 - [ ] Bloque 5: generar `biblioteca-juvenil.xml`
 - [ ] Bloque 6: generar `biblioteca.json`
@@ -28,6 +28,13 @@ Tamaño de cada registro: 106 bytes.
 ## Bloque 2: clase Libro
 Clase `Libro` con los 7 campos. `generos` es una lista de 2 elementos.
 
+## Bloque 3: lectura de datos-bib.dat
+Clase `LectorBiblioteca`. Se usa `RandomAccessFile` y se recorren los campos en el orden de `campos.dat`.
+`genero` se lee dos veces por libro. Registro de 106 bytes, 30 libros.
+Ejecutar: java -cp target\classes com.example.LectorBiblioteca
+
 ## Cómo compilar y ejecutar
+Se requiere JDK 17 o posterior.
+
 mvn compile
 java -cp target\classes com.example.LectorCampos

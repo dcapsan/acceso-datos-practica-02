@@ -31,6 +31,7 @@ Clase `Libro` con los 7 campos. `generos` es una lista de 2 elementos.
 ## Bloque 3: lectura de datos-bib.dat
 Clase `LectorBiblioteca`. Se usa `RandomAccessFile` y se recorren los campos en el orden de `campos.dat`.
 `genero` se lee dos veces por libro. Registro de 106 bytes, 30 libros.
+Los textos del fichero están en ISO-8859-1 (1 byte por carácter), por eso se lee con ese charset.
 Ejecutar: java -cp target\classes com.example.LectorBiblioteca
 
 ## Cómo compilar y ejecutar

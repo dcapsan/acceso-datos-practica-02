@@ -12,7 +12,7 @@ public class LectorBiblioteca {
     private static String leerTexto(RandomAccessFile raf, int bytes) throws IOException {
         byte[] buffer = new byte[bytes];
         raf.readFully(buffer);
-        return new String(buffer, StandardCharsets.UTF_8).trim();
+        return new String(buffer, StandardCharsets.ISO_8859_1).trim();
     }
 
     public static List<Libro> leerLibros(String ruta,

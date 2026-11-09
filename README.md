@@ -11,7 +11,7 @@ Reparto del catálogo de una biblioteca entre dos sedes (CENTRAL y JUVENIL).
 - [x] Bloque 1: lectura de `campos.dat` (`LectorCampos`)
 - [x] Bloque 2: clase `Libro`
 - [x] Bloque 3: lectura de `datos-bib.dat`
-- [ ] Bloque 4: separar libros por género
+- [x] Bloque 4: separar libros por género
 - [ ] Bloque 5: generar `biblioteca-juvenil.xml`
 - [ ] Bloque 6: generar `biblioteca.json`
 - [ ] Bloque 7: validar el XML con el XSD
@@ -33,6 +33,11 @@ Clase `LectorBiblioteca`. Se usa `RandomAccessFile` y se recorren los campos en 
 `genero` se lee dos veces por libro. Registro de 106 bytes, 30 libros.
 Los textos del fichero están en ISO-8859-1 (1 byte por carácter), por eso se lee con ese charset.
 Ejecutar: java -cp target\classes com.example.LectorBiblioteca
+
+## Bloque 4: separar por género
+Clase `SeparadorCatalogo`. Un libro es juvenil si alguno de sus dos géneros es Infantil o Juvenil.
+Se separa por género, no por la sede que traiga el fichero.
+Ejecutar: java -cp target\classes com.example.SeparadorCatalogo
 
 ## Cómo compilar y ejecutar
 Se requiere JDK 17 o posterior.
